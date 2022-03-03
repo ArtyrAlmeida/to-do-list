@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html{
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #F1FAEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 7.4rem;
+    color: #E63946;
+
+    margin-top: 3.5rem;
+}
+
+.list-container {
+    background-color: #A8DADC;
+    display: flex;
+    border-radius: 13px 13px 0 0;
+    flex-direction: column;
+    width: 48em;
+}
+
+.list-header {
+    background-color: #E63946;
+    border-radius: 13px 13px 0 0;
+    padding: 1em 0;
+}
+
+.list-header h2 {
+    color: white;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.task-list {
+    height: 390px;
+    max-height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.task {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 91%;
+    padding: .9rem 1.2rem;
+    background-color: #457B9D;
+}
+
+.task span {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+}
+
+#lists-section {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 4.8rem;
+}
+
+#search {
+    margin: 1.3rem auto;
+    border: solid 1px #E63946;
+    border-radius: 5px;
+    display: flex;
+    width: 91%;
+    background-color: #F1FAEE;
+}
+
+#search img {
+    border-left: 1px solid #E63946;
+    padding: .9rem;
+}
+
+#search-input {
+    width: 87%;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    background-color: #F1FAEE;
+    padding: .9rem 1.2rem;
+    font-size: 1.8rem;
+}
+
+#add-task {
+    display: flex;
+    background-color: #E63946;
+    border: 2px solid #E63946;
+    margin: 3.5rem auto;
+}
+
+#add-input {
+    font-size: 2.4rem;
+    background-color: #F9FFF8;
+    border: none;
+    padding: .7em .7em;
+    width: 45vw;
+}
+
+#add-button {
+    font-size: 2.4rem;
+    cursor: pointer;
+    display: inline;
+    padding: .7em 1.3em;
+    background-color: #E63946;
+    color: white;
+    border: none;
+}
