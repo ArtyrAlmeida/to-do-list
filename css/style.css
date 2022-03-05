@@ -106,6 +106,10 @@ h1 {
     font-size: 1.8rem;
 }
 
+#completed {
+    padding-top: 1.3rem;
+}
+
 #add-task {
     display: flex;
     background-color: #E63946;

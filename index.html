@@ -10,7 +10,7 @@
 <body>
     <h1>To Do List</h1>
     <div id="add-task">
-        <input id="add-input" type="text" maxlength="28" placeholder="Adicionar tarefa">
+        <input id="add-input" type="text" placeholder="Adicionar tarefa">
         <button id="add-button">Adicionar</button>
     </div>
     <section id="lists-section">
@@ -22,15 +22,7 @@
                 <input id="search-input" type="search" placeholder="Buscar">
                 <img src="assets/images/search-icon.svg" alt="Ícone de busca">
             </div>
-            <div class="task-list">
-                <div class="task">
-                    <input type="checkbox">
-                    <span>Task</span>
-                </div>
-                <div class="task">
-                    <input type="checkbox">
-                    <span>Task</span>
-                </div>
+            <div id="pending" class="task-list">
                 <div class="task">
                     <input type="checkbox">
                     <span>Task</span>
@@ -40,24 +32,12 @@
 
         <div class="list-container">
             <div class="list-header">
-                <h2>Pendente</h2>
+                <h2>Completo</h2>
             </div>
-            <div id="search">
-                <input id="search-input" type="search" placeholder="Buscar">
-                <img src="assets/images/search-icon.svg" alt="Ícone de busca">
-            </div>
-            <div class="task-list">
+            <div id="completed" class="task-list">
                 <div class="task">
                     <input type="checkbox">
                     <span>Task</span>
-                </div>
-                <div class="task">
-                    <input type="checkbox">
-                    <span>Task</span>
-                </div>
-                <div class="task">
-                    <input type="checkbox">
-                    <span></span>
                 </div>
             </div>
         </div>
