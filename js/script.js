@@ -1,9 +1,11 @@
-const addInput      = document.querySelector("#add-input"),
-      addButton     = document.querySelector("#add-button"),
-      taskList      = document.querySelector(".task-list"),
-      pendingList   = document.querySelector("#pending"),
-      completedList = document.querySelector("#completed"),
-      viewButton    = document.querySelector("#view-lists");
+const addInput        = document.querySelector("#add-input"),
+      addButton       = document.querySelector("#add-button"),
+      taskList        = document.querySelector(".task-list"),
+      pendingList     = document.querySelector("#pending"),
+      completedList   = document.querySelector("#completed"),
+      viewButton      = document.querySelector("#view-lists"),
+      pendingSearch   = document.querySelector("#pending-search"),
+      completedSearch = document.querySelector("#completed-search");
 
 let pendingTasks    = Array.from(document.querySelectorAll("#pending .task")),
     completedTasks  = Array.from(document.querySelectorAll("#completed .task")),
@@ -14,6 +16,9 @@ addInputsEvents(pendingInputs);
 addInputsEvents(completedInputs);
 
 addButton.addEventListener("click", createTask);
+
+pendingSearch.addEventListener("keyup", () => searchTask(pendingTasks, pendingSearch.value));
+completedSearch.addEventListener("keyup", () => searchTask(completedTasks, completedSearch.value));
 
 function createTask() {
     let newTask    = document.createElement("div");
@@ -31,15 +36,14 @@ function createTask() {
     updateList(pendingTasks, pendingList);
     pendingInputs = Array.from(document.querySelectorAll("#pending .task input"));
     addInputsEvents(pendingInputs);
+    addInput.value = "";
 }
 
 function manageTask () {
     
     pendingInputs.forEach(input => {
         if(input.checked) {
-            console.log("Checado");
             let index = pendingInputs.indexOf(input);
-            console.log(pendingTasks[index]);
             completedTasks.push(pendingTasks[index]);
             pendingTasks.splice(index, 1);
         }
@@ -47,9 +51,7 @@ function manageTask () {
 
     completedInputs.forEach(input => {
         if (!(input.checked)){
-            console.log("Nao checado");
             let index = completedInputs.indexOf(input);
-            console.log(index);
             pendingTasks.push(completedTasks[index]);
             completedTasks.splice(index, 1);
         }
@@ -77,9 +79,23 @@ function updateList (listArray, taskList) {
 function addInputsEvents (inputsList) {
     inputsList.forEach((checkbox) => {
         checkbox.removeEventListener("click", manageTask);
-    })
+    });
 
     inputsList.forEach((checkbox) => {
         checkbox.addEventListener("click", manageTask);
+    });
+}
+
+function searchTask (taskList, string) {
+    taskList.forEach(task => {
+        task.style.display = "none";
+        if(task.lastElementChild.textContent.includes(string)) {
+            task.style.display = "flex";
+        }
+        else if(string == "") {
+            taskList.forEach(task => {
+                task.style.display = "flex";
+            });
+        }
     });
 }
